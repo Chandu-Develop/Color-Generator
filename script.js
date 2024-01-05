@@ -14,17 +14,17 @@ const hexaColorGenerator = () => {
 }
 
 const setHeadingColor = (s) => {
-    var {red, blue, green} = hexToRGB(s)
+    var { red, blue, green } = hexToRGB(s)
     var distance = Math.sqrt(Math.pow(255 - red, 2) + Math.pow(255 - blue, 2) + Math.pow(255 - green, 2))
     const threshold = Math.sqrt(Math.pow(255, 2) + Math.pow(255, 2) + Math.pow(255, 2))
     const thresholdMax = 75 / 100 * threshold
-    const thresholdMin = 25 /100 * threshold
-    
-    if(distance > thresholdMax){
-        heading.style.color = `rgb(${255-red}, ${255-blue}, ${255-green})`
-    }else if(distance<thresholdMin){
+    const thresholdMin = 25 / 100 * threshold
+
+    if (distance > thresholdMax) {
+        heading.style.color = `rgb(${255 - red}, ${255 - blue}, ${255 - green})`
+    } else if (distance < thresholdMin) {
         heading.style.color = "rgb(127, 127, 127)"
-    } else{
+    } else {
         heading.style.color = "#fff"
     }
 }
@@ -43,17 +43,17 @@ function hexToRGB(s) {
     const redValue = parseInt(red, 16)
     const blueValue = parseInt(blue, 16)
     const greenValue = parseInt(green, 16)
-    return {rgb: `rgb(${redValue}, ${blueValue}, ${greenValue})`, red:redValue, blue:blueValue, green: greenValue}
+    return { rgb: `rgb(${redValue}, ${blueValue}, ${greenValue})`, red: redValue, blue: blueValue, green: greenValue }
 }
 
-generateButton.onclick = function () {
+generateButton.addEventListener("click", () => {
     let newColor = hexaColorGenerator()
     document.body.style.backgroundColor = newColor
-    colorValue.textContent = newColor
+    colorValue.innerHTML = `${newColor} <i class='bx bx-copy-alt'></i>`
     setHeadingColor(colorValue.textContent.slice(1))
-}
+})
 
-colorValue.onclick = function () {
+colorValue.addEventListener("click", () => {
     let valueToCopy = colorValue.textContent
     navigator.clipboard.writeText(valueToCopy)
-}
+})
