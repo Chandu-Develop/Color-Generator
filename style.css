@@ -1,0 +1,75 @@
+@import url(https://fonts.googleapis.com/css2?family=Grechen+Fuemen&family=Long+Cang&family=Nothing+You+Could+Do&family=Poppins&family=Rock+Salt&family=Shadows+Into+Light&family=Syncopate&display=swap);
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #373737;
+}
+
+.main {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -60%);
+}
+
+h1 {
+    position: relative;
+    text-align: center;
+    color: #fff;
+    font-family: 'Rock Salt', cursive;
+    font-size: 36px;
+}
+
+.main-wrapper {
+    /* background: red; */
+    margin: 50px 0;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* font-size: 32px; */
+}
+
+button {
+    width: 50%;
+    font-size: 24px;
+    font-style: italic;
+    font-weight: 700;
+    margin: 10px;
+    padding: 10px;
+    background: #fff;
+    border-radius: 15px;
+    border: none;
+    transition: all .2s ease;
+    cursor: pointer;
+}
+
+button:hover {
+    transform: translateY(-3px);
+    box-shadow: 5px 5px 5px 2px #000;
+}
+
+button .bx {
+    margin-left: 10%;
+}
+
+@media screen and (max-width:992px) {
+    .main{
+        transform: translate(-50%, -50%);
+    }
+    button {
+        display: flex;
+        font-size: 30px;
+        width: 100%;
+        padding: 20px 30px;
+    }
+    .generate{
+        margin-top: 30px;
+    }
+
+}
