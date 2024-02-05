@@ -1,3 +1,5 @@
+// document.body.style.background = `#{Math.floor(Math.Random()*'0xffffff').toString(16)}`
+
 const heading = document.querySelector("h1")
 const generateButton = document.querySelector(".generate")
 const colorValue = document.querySelector(".copy")
